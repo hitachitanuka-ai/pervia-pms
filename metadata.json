@@ -1,0 +1,6 @@
+{
+  "name": "Pervia",
+  "description": "Pervia — Enterprise Performance Management System. Empowering People. Elevating Performance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

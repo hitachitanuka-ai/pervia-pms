@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@theme {
+  /* Warm Terracotta, Apricot & Sunset Orange Palette */
+  --color-brand: #EA580C;
+  --color-brand-dark: #C2410C;
+  --color-brand-darker: #9A3412;
+  --color-brand-light: #F97316;
+  --color-brand-muted: #FFEDD5;
+  --color-brand-surface: #FFF7ED;
+
+  /* Terracotta & Warm Apricot Tones */
+  --color-terracotta: #EA580C;
+  --color-apricot: #FDBA74;
+  --color-peach-light: #FFEDD5;
+  --color-peach-backdrop: #F6CDB4;
+  --color-warm-sand: #FAF5EF;
+  --color-warm-card: #FFFFFF;
+
+  /* Enterprise Primary & Secondary Tokens */
+  --color-primary: #EA580C;
+  --color-primary-dark: #C2410C;
+  --color-primary-light: #FB923C;
+  --color-secondary: #292524;
+  --color-accent: #FFEDD5;
+
+  /* Surfaces & Backgrounds */
+  --color-surface: #FFFFFF;
+  --color-surface-bg: #F9F5F0;
+  --color-pms-bg: #F9F5F0;
+  --color-border-subtle: #F1E5D8;
+  --color-border-focus: #EA580C;
+
+  /* Typography Colors */
+  --color-text-main: #292524;
+  --color-text-secondary: #78716C;
+  --color-text-muted: #A8A29E;
+
+  /* Status Colors */
+  --color-success: #16A36A;
+  --color-success-muted: #EBF7F0;
+  --color-warning: #D97706;
+  --color-warning-muted: #FEF3C7;
+  --color-danger: #DC2626;
+  --color-danger-muted: #FEF2F2;
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+html, body {
+  font-family: var(--font-sans);
+  background-color: #F9F5F0;
+  color: #292524;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+}
+
+/* Custom scrollbars for enterprise data tables */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F4EBE1;
+}
+::-webkit-scrollbar-thumb {
+  background: #D7C4B2;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #BAA18D;
+}
+
+/* Print-optimized styling for Printable Appraisal Dossier (A4 export) */
+@media print {
+  @page {
+    margin: 12mm 10mm;
+    size: A4 portrait;
+  }
+
+  html, body, #root {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #18181b !important;
+    overflow: visible !important;
+    height: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  header, aside, .no-print, .rbac-banner, .subtabs-bar {
+    display: none !important;
+  }
+
+  .printable-dossier-card {
+    border: 1px solid #d4d4d8 !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .print-avoid-break {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Force display colors and backgrounds in print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+
